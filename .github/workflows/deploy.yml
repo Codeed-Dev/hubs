@@ -1,0 +1,12 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use Hubs-cloud branch
+        run: exit 1
