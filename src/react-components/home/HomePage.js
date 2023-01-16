@@ -55,6 +55,7 @@ export function HomePage() {
   return (
     <PageContainer className={styles.homePage}>
       <Container>
+        <h1>TESTE CODEED</h1>
         <div className={styles.hero}>
           {auth.isSignedIn ? (
             <div className={styles.signInContainer}>

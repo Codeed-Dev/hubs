@@ -1,0 +1,27 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: "finnp/create-file-action@master"
+        name: 'create credentials'
+        env:
+          FILE_NAME: ".ret.credentials"
+          FILE_DATA: '{"host":"codeedmeta.com","email":"guilherme.gavazzoni@outlook.com","token":"${{ secrets.HUB_TOKEN }}"}'
+          
+      - run: npm ci
+
+      - run: cd admin && npm ci
+      
+      - run: npm run deploy
