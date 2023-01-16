@@ -1,0 +1,15 @@
+:local(.button) {
+    padding: 20px 12px;
+    background-image: linear-gradient(to right, #FF4010 , #A60175);
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    border: 3px solid #4CA1DF;
+
+    &:hover {
+        filter: brightness(85%);
+    }
+    svg {
+        margin-right: 10px;
+    }
+}

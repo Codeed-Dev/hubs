@@ -20,8 +20,13 @@ import { SignInButton } from "./SignInButton";
 import { AppLogo } from "../misc/AppLogo";
 import { isHmc } from "../../utils/isHmc";
 import maskEmail from "../../utils/mask-email";
+import CodeedHomePage from "../codeed/HomePage";
 
 export function HomePage() {
+  return <CodeedHomePage />;
+}
+
+export function HomePageOld() {
   const auth = useContext(AuthContext);
   const intl = useIntl();
 
@@ -55,7 +60,6 @@ export function HomePage() {
   return (
     <PageContainer className={styles.homePage}>
       <Container>
-        <h1>TESTE CODEED</h1>
         <div className={styles.hero}>
           {auth.isSignedIn ? (
             <div className={styles.signInContainer}>

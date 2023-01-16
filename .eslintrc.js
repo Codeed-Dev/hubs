@@ -20,7 +20,12 @@ module.exports = {
   plugins: ["prettier", "react", "react-hooks", "@calm/react-intl"],
   // https://eslint.org/docs/rules/
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto"
+      }
+    ],
 
     // https://github.com/prettier/eslint-plugin-prettier
     "prefer-const": "error",

@@ -1,0 +1,21 @@
+:local(.input) {
+  padding: 20px 12px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  color: white;
+  font-weight: 900;
+  border: 3px solid #4ca1df;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    flex: 1;
+  }
+}
