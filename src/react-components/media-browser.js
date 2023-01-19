@@ -430,6 +430,8 @@ class MediaBrowserContainer extends Component {
       );
     }
 
+    return <></>; // desativado a seleção de midia
+
     return (
       <MediaBrowser
         browserRef={r => (this.browserDiv = r)}

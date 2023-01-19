@@ -12,6 +12,7 @@
   flex-direction: column;
   bottom: 8px;
   margin-bottom: 8px;
+  z-index: 10;
 
   @media (max-width: theme.$breakpoint-md) {
     max-width: min(100% - 8px, 320px);

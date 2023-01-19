@@ -5,12 +5,14 @@ import { replaceHistoryState } from "../utils/history";
 import { AvatarSettingsSidebar } from "./room/AvatarSettingsSidebar";
 import { AvatarSetupModal } from "./room/AvatarSetupModal";
 import AvatarPreview from "./avatar-preview";
+import { AvatarUrlModalContainer } from "./room/AvatarUrlModalContainer";
 
 export default class ProfileEntryPanel extends Component {
   static propTypes = {
     containerType: PropTypes.oneOf(["sidebar", "modal"]),
     displayNameOverride: PropTypes.string,
     store: PropTypes.object,
+    scene: PropTypes.object,
     mediaSearchStore: PropTypes.object,
     messages: PropTypes.object,
     finished: PropTypes.func,
@@ -18,7 +20,8 @@ export default class ProfileEntryPanel extends Component {
     avatarId: PropTypes.string,
     onClose: PropTypes.func,
     onBack: PropTypes.func,
-    showBackButton: PropTypes.bool
+    showBackButton: PropTypes.bool,
+    showNonHistoriedDialog: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -130,7 +133,8 @@ export default class ProfileEntryPanel extends Component {
       avatarPreview: <AvatarPreview avatarGltfUrl={this.state.avatar && this.state.avatar.gltf_url} />,
       onChangeAvatar: e => {
         e.preventDefault();
-        this.props.mediaSearchStore.sourceNavigateWithNoNav("avatars", "use");
+        this.props.showNonHistoriedDialog(AvatarUrlModalContainer, { scene: this.scene, store: this.props.store });
+        //this.props.mediaSearchStore.sourceNavigateWithNoNav("avatars", "use");
       },
       onSubmit: this.saveStateAndFinish,
       onClose: this.props.onClose,

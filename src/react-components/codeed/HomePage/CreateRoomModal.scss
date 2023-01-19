@@ -1,4 +1,5 @@
 :local(.create-room-modal) {
+  min-width: 500px;
 }
 
 :local(.create-room-modal-content) {
@@ -9,6 +10,7 @@
   height: 200px;
   margin-right: 20px;
   padding: 5px;
+  width: 100%;
 
   &:last-child {
     margin-right: 0px;
@@ -21,6 +23,7 @@
     box-shadow: 0 0 10px 2px #4ca2df6c;
     border: 3px solid #4ca2df6c;
     cursor: pointer;
+    width: 100%;
   }
 }
 
