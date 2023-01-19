@@ -69,7 +69,7 @@ const CodeedHomePage = () => {
               />
             </div>
             <p>
-              Deseja criar eventos híbridos ou virtuais, ter controle de participantes e estatísticas?{" "}
+              Deseja criar eventos online e ter controle de participantes e estatísticas?{" "}
               <a href="https://console.codeedmeta.com/">Comece agora!</a>
             </p>
           </div>
