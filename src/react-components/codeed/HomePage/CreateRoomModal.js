@@ -12,6 +12,7 @@ import { Column } from "../../layout/Column";
 import { createAndRedirectToNewHub } from "../../../utils/phoenix-utils";
 import classNames from "classnames";
 
+/*
 const rooms = [
   {
     name: "Sala de Apresentação",
@@ -27,6 +28,25 @@ const rooms = [
     name: "Sala de Reunião",
     imgScr: "https://dev.reticulum.io/files/d033c4e4-2174-4c6a-8a42-70b52708044f.jpg",
     sceneId: "2upDByq"
+  }
+];
+*/
+
+const rooms = [
+  {
+    name: "Sala de Reunião",
+    imgScr: "https://codeedmeta-assets.codeedmeta.com/files/fe25631b-304b-4c69-93dd-044c585ccc3a",
+    sceneId: "RYNHBLC"
+  },
+  {
+    name: "Sala de Jogos",
+    imgScr: "https://codeedmeta-assets.codeedmeta.com/files/b6fec23f-7a30-4bc9-b13e-ff189e68c98a",
+    sceneId: "8TauFje"
+  },
+  {
+    name: "Sala de Conferências",
+    imgScr: "https://codeedmeta-assets.codeedmeta.com/files/7103afbe-e8ed-4996-9352-a32225bd1028",
+    sceneId: "MvwHeP4"
   }
 ];
 

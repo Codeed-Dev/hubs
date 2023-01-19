@@ -35,7 +35,6 @@ const CodeedHomePage = () => {
 
   const createRoom = useCallback(() => {
     setModalVisible(true);
-    //createAndRedirectToNewHub("Minha sala", null, null);
   }, []);
 
   return (
