@@ -1652,7 +1652,7 @@ class UIRoot extends Component {
                         }}
                       />
                     )}
-                    {false && <MoreMenuPopoverButton menu={moreMenu} /> /* Desativado o More menu temporariamente*/}
+                    {true && <MoreMenuPopoverButton menu={moreMenu} /> /* Desativado o More menu temporariamente*/}
                   </>
                 }
               />
