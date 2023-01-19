@@ -1,11 +1,17 @@
-@use '../styles/theme';
+@use "../styles/theme";
 
 :local(.toolbar) {
   height: 96px;
   display: flex;
   padding: 12px;
-  background-color: theme.$background1-color;
-  border-top: 1px solid theme.$border1-color;
+
+  // ALteração codeed para o fundo da toolbar ficar transparente
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //background-color: theme.$background1-color;
+  //border-top: 1px solid theme.$border1-color;
 
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;

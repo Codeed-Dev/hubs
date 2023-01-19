@@ -1,67 +1,87 @@
 :local(.home-page) {
-    background-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+
+  :local(.page) {
+    width: 90%;
     display: flex;
-    padding-top: 20px;
+    flex-direction: column;
+  }
+
+  :local(.header) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  :local(.content) {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    flex: 1;
+    gap: 20px;
 
-    :local(.page) {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
+    h1 {
+      font-size: 62px;
+      max-width: 50%;
+      font-weight: 900;
+      margin-bottom: 20px;
     }
 
-    :local(.header) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        :local(.logo) {
-            height: 60px;
-        }
+    p {
+      font-weight: 200;
+      font-size: 16px;
+      max-width: 50%;
+      opacity: 0.8;
     }
 
-    :local(.content) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex: 1;
-        gap: 20px;
-
-        h1 {
-            font-size: 62px;
-            max-width: 50%;
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-weight: 200;
-            font-size: 16px;
-            max-width: 50%;
-            opacity: 0.8;
-        }
-
-        a {
-            cursor: pointer;
-            color: #75EEFF;
-            text-decoration: underline;
-        }
+    a {
+      cursor: pointer;
+      color: #75eeff;
+      text-decoration: underline;
     }
+  }
 
-    :local(.content-buttons)
-    {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
-
+  :local(.content-buttons) {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
 }
 
 body {
-    font-family: 'Nunito Sans';
-    color: white;
+  font-family: "Nunito Sans";
+  color: white;
+}
+
+:local(.modal-container) {
+  grid-column: main;
+  grid-row: viewport;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+:local(.viewport) {
+  position: relative;
+  grid-row-start: viewport;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    pointer-events: auto;
+  }
 }

@@ -89,6 +89,7 @@ export function InvitePopoverButton({
           selected={popoverVisible}
           onClick={togglePopover}
           label={title}
+          preset="accent2"
           {...rest}
         />
       )}

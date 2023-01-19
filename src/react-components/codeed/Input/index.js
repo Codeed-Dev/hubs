@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./index.scss";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const CodeedInput = props => {
+const CodeedInput = ({ style, icon, ...rest }) => {
   const inputRef = useRef();
 
   const focus = () => {
@@ -10,18 +11,16 @@ const CodeedInput = props => {
   };
 
   return (
-    <div className={styles.input} onClick={focus} style={props.style}>
-      <FontAwesomeIcon icon={props.icon} />
-      <input
-        ref={inputRef}
-        placeholder="Digite o código do metaverso"
-        onChange={props.onChange}
-        value={props.value}
-        onBlur={props.onBlur}
-        onKeyDown={props.onKeyDown}
-      />
+    <div className={styles.input} onClick={focus} style={style}>
+      {icon && <FontAwesomeIcon icon={icon} />}
+      <input ref={inputRef} {...rest} />
     </div>
   );
+};
+
+CodeedInput.propTypes = {
+  style: PropTypes.object,
+  icon: PropTypes.object
 };
 
 export default CodeedInput;

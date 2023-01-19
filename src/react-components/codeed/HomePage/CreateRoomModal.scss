@@ -1,0 +1,31 @@
+:local(.create-room-modal) {
+}
+
+:local(.create-room-modal-content) {
+  padding: 20px;
+}
+
+:local(.scene-img) {
+  height: 200px;
+  margin-right: 20px;
+  padding: 5px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px #4ca2df6c;
+    border: 3px solid #4ca2df6c;
+    cursor: pointer;
+  }
+}
+
+:local(.selected-scene) {
+  img {
+    border-color: #4ca1df;
+  }
+}

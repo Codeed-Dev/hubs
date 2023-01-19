@@ -7,7 +7,7 @@ import {
 import "./utils/debug-log";
 import configs from "./utils/configs";
 import "./utils/theme";
-
+import codeedHub from "./codeed/hub";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 

@@ -730,6 +730,14 @@ module.exports = async (env, argv) => {
           POSTGREST_SERVER: process.env.POSTGREST_SERVER,
           UPLOADS_HOST: process.env.UPLOADS_HOST,
           BASE_ASSETS_PATH: process.env.BASE_ASSETS_PATH,
+          CODEEDMETA_SERVER: process.env.CODEEDMETA_SERVER,
+          FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+          FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+          FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+          FIREBASE_STORAGE_BUKET: process.env.FIREBASE_STORAGE_BUKET,
+          FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
+          FIREBASE_MESSAGING_APP_ID: process.env.FIREBASE_MESSAGING_APP_ID,
+          FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
           APP_CONFIG: appConfig
         })
       })

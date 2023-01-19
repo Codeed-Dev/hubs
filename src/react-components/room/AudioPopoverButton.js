@@ -30,7 +30,7 @@ export const AudioPopoverButton = ({ initiallyVisible, content, micButton, disab
           <ToolbarButton
             ref={triggerRef}
             icon={<ArrowIcon />}
-            preset="basic"
+            preset="accent2"
             selected={popoverVisible}
             onClick={togglePopover}
             type={"left"}

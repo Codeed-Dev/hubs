@@ -16,8 +16,8 @@
 
 :local(.header) {
   display: flex;
-  height: 48px;
-  border-bottom: 1px solid theme.$border1-color;
+  min-height: 48px; // Codeed - alteração para que o header aumente caso seja utilizado uma imagem
+  //border-bottom: 1px solid theme.$border1-color; // Codeed - removido a barra que separa o header
   align-items: center;
   justify-content: center;
 }
@@ -42,7 +42,7 @@
 }
 
 :local(.sm-fullscreen) {
-  @media(max-width: theme.$breakpoint-lg - 1), (max-height: theme.$breakpoint-vr - 1) {
+  @media (max-width: theme.$breakpoint-lg - 1), (max-height: theme.$breakpoint-vr - 1) {
     position: fixed;
     top: 0;
     left: 0;

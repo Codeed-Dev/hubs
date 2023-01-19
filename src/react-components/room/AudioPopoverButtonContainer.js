@@ -22,7 +22,7 @@ export const AudioPopoverButtonContainer = ({ scene, initiallyVisible, content }
           scene={scene}
           icon={isMicMuted || !canVoiceChat || micPermissionDenied ? <MicrophoneMutedIcon /> : <MicrophoneIcon />}
           label={<FormattedMessage id="voice-button-container.label" defaultMessage="Voice" />}
-          preset="basic"
+          preset="accent2"
           onClick={toggleMute}
           statusColor={!micPermissionDenied && canVoiceChat ? (isMicMuted ? "disabled" : "enabled") : undefined}
           type={"right"}

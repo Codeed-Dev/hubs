@@ -5,15 +5,15 @@
     "name": "Hubs Default",
     "variables": {}
   },
-  {   
+  {
     "name": "Hubs Dark Mode",
     "id": "hubs-dark-mode",
     "darkModeDefault": true,
     "variables": {
       "loading-screen-background": "radial-gradient(50% 50% at 50% 50%, #15171B 0%, #282C31 100%)",
       "accept-color-pressed": "#21242C",
-      "primary-color-hover": "#12A4ED",
-      "primary-color": "#12A4ED",
+      "primary-color-hover": "#3b92d1",
+      "primary-color": "#4CA1DF",
       "outline-color": "#ffffff",
       "basic-color": "#3A4048",
       "basic-color-hover": "#4B5562",
@@ -54,12 +54,12 @@
       "text-inverted-color": "#000000",
       "secondary-color": "#3A4048",
       "secondary-color-hover": "#5D646C",
-      "border1-color": "#3A4048",
+      "border1-color": "#2e303d",
       "border2-color": "#5D646C",
       "border3-color": "#5D646C",
       "active-color-hover": "#12A4ED",
       "active-text-color": "#2B313B",
-      "background1-color": "#2B313B",
+      "background1-color": "#1b1a1f",
       "background2-color": "#21242C",
       "background3-color": "#3A4048",
       "background4-color": "#5D646C",
