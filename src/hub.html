@@ -611,9 +611,41 @@
                   tags="isHoldable: true; holdableButton: true;"
                   is-remote-hover-target
                   transform-button
-                  transform-button-selector
+                  transform-button-selector="axis: 0 1 0"
                   hide-when-pinned-and-forbidden
                   position="-0.3 -0.125 0.001"
+                >
+                  <a-entity
+                    sprite
+                    icon-button="image: rotate-action.png; hoverImage: rotate-action.png;"
+                    scale="0.165 0.165 0.165"
+                    position="0 0 0.001"
+                  ></a-entity>
+                </a-entity>
+                <a-entity
+                  mixin="rounded-action-button"
+                  tags="isHoldable: true; holdableButton: true;"
+                  is-remote-hover-target
+                  transform-button
+                  transform-button-selector="axis: 1 0 0"
+                  hide-when-pinned-and-forbidden
+                  position="-0.3 -0.225 0.001"
+                >
+                  <a-entity
+                    sprite
+                    icon-button="image: rotate-action.png; hoverImage: rotate-action.png;"
+                    scale="0.165 0.165 0.165"
+                    position="0 0 0.001"
+                  ></a-entity>
+                </a-entity>
+                <a-entity
+                  mixin="rounded-action-button"
+                  tags="isHoldable: true; holdableButton: true;"
+                  is-remote-hover-target
+                  transform-button
+                  transform-button-selector="axis: 0 0 1"
+                  hide-when-pinned-and-forbidden
+                  position="-0.3 -0.325 0.001"
                 >
                   <a-entity
                     sprite

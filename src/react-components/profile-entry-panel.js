@@ -133,6 +133,12 @@ export default class ProfileEntryPanel extends Component {
       avatarPreview: <AvatarPreview avatarGltfUrl={this.state.avatar && this.state.avatar.gltf_url} />,
       onChangeAvatar: e => {
         e.preventDefault();
+
+        // antes de abrir a tela de seleção de avatar, altera o display name para o informado. Estava perdendo a informação ao alterar o avatar
+        this.props.store.update({
+          profile: { ...this.props.store.state.profile, ...{ displayName: this.state.displayName } }
+        });
+        // alteração para abrir a tela de AvatarUrl direto (sem abrir o media)
         this.props.showNonHistoriedDialog(AvatarUrlModalContainer, { scene: this.scene, store: this.props.store });
         //this.props.mediaSearchStore.sourceNavigateWithNoNav("avatars", "use");
       },

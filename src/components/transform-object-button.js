@@ -55,6 +55,8 @@ AFRAME.registerComponent("transform-button", {
       if (!NAF.utils.isMine(this.targetEl) && !NAF.utils.takeOwnership(this.targetEl)) {
         return;
       }
+
+      console.log("onGrabStart");
       if (this.targetEl.body) {
         this.targetEl.setAttribute("body-helper", AMMO_BODY_ATTRIBUTES);
       }
@@ -202,6 +204,8 @@ AFRAME.registerSystem("transform-selected-object", {
     this.mode = data.mode;
     this.transforming = true;
 
+    console.log("tranform", data);
+
     if (this.mode === TRANSFORM_MODE.ALIGN) {
       this.store.update({ activity: { hasRecentered: true } });
       return;
@@ -335,13 +339,15 @@ AFRAME.registerSystem("transform-selected-object", {
 });
 
 AFRAME.registerComponent("transform-button-selector", {
+  schema: {
+    axis: { type: "vec3" }
+  },
   tick() {
     this.userinput = this.userinput || this.el.sceneEl.systems.userinput;
     const hasHand = this.userinput.get(paths.actions.rightHand.pose) || this.userinput.get(paths.actions.leftHand.pose);
     if (!hasHand) {
-      if (this.el.components["transform-button"].data.mode !== TRANSFORM_MODE.CURSOR) {
-        this.el.setAttribute("transform-button", "mode", TRANSFORM_MODE.CURSOR);
-      }
+      this.el.setAttribute("transform-button", "mode", TRANSFORM_MODE.AXIS);
+      this.el.setAttribute("transform-button", "axis", this.data.axis);
     } else {
       if (this.el.components["transform-button"].data.mode !== TRANSFORM_MODE.PUPPET) {
         this.el.setAttribute("transform-button", "mode", TRANSFORM_MODE.PUPPET);

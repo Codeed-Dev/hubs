@@ -29,6 +29,9 @@ AFRAME.registerComponent("hoverable-visuals", {
     this.isTouchscreen = isMobile && !isMobileVR;
   },
   tick(time) {
+    // remove o efeito de hover nos objetos
+    return;
+    /*
     if (!this.uniforms || !this.uniforms.length) return;
 
     const isFrozen = this.el.sceneEl.is("frozen");
@@ -97,5 +100,6 @@ AFRAME.registerComponent("hoverable-visuals", {
         uniform.hubs_Time.value = time;
       }
     }
+    */
   }
 });

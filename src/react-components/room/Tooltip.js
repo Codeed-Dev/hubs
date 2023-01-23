@@ -40,31 +40,31 @@ const onboardingMessages = defineMessages({
   "tips.welcome": {
     id: "tips.welcome",
     defaultMessage:
-      "<h2>Welcome to {appName}</h2><p>Let's take a quick look to get comfortable</p><p2>with the controls</p2>"
+      "<h2>Bem vindo ao Codeed.Meta</h2><p>Vamos dar uma olhada rápida nos controles</p><p2>para você ficar mais confortável.</p2>"
   },
   "tips.mobile.locomotion": {
     id: "tips.mobile.locomotion2",
-    defaultMessage: "<p>Move around by pinching with two fingers</p><p2>or with the on-screen joysticks</p2>"
+    defaultMessage: "<p>Mova-se arrastando os dois dedos na tela</p><p2>ou com os joysticks</p2>"
   },
   "tips.mobile.turning": {
     id: "tips.mobile.turning",
-    defaultMessage: "Tap and drag to turn"
+    defaultMessage: "Segure e arraste para girar"
   },
   "tips.desktop.locomotion": {
     id: "tips.desktop.locomotion2",
-    defaultMessage: "<p>Move around with</p> {wasd} or {arrows}"
+    defaultMessage: "<p>Se mova com</p> {wasd} ou {arrows}"
   },
   "tips.desktop.turning": {
     id: "tips.desktop.turning2",
-    defaultMessage: "Use {left} or {right} or click and drag"
+    defaultMessage: "Para rotacionar use {left} ou {right} ou segure e arraste o mouse"
   },
   "tips.desktop.invite": {
     id: "tips.desktop.invite2",
-    defaultMessage: "<p>Use the {invite} button to share</p><p2>this room</p2>"
+    defaultMessage: "<p>Convide novas pessoas utilizando o botão</p><p>{invite}</p>"
   },
   "tips.end": {
     id: "tips.end",
-    defaultMessage: "Tutorial completed! Have fun exploring"
+    defaultMessage: "Tutorial encerrado! Bom evento!"
   },
   "tips.menu": {
     id: "tips.menu",
@@ -80,15 +80,15 @@ const onboardingMessages = defineMessages({
   },
   "tips.buttons.done": {
     id: "tips.buttons.done",
-    defaultMessage: "Done"
+    defaultMessage: "Encerrar"
   },
   "tips.text.more": {
     id: "tips.text.more",
-    defaultMessage: "More"
+    defaultMessage: "Mais"
   },
   "tips.text.invite": {
     id: "tips.text.invite",
-    defaultMessage: "Invite"
+    defaultMessage: "Convidar"
   }
 });
 
