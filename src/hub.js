@@ -902,6 +902,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     subscriptions,
     enterScene: entryManager.enterScene,
     exitScene: reason => {
+      console.trace();
       entryManager.exitScene();
       remountUI({ roomUnavailableReason: reason || ExitReason.exited });
     }
