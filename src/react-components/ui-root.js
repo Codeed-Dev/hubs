@@ -842,11 +842,13 @@ class UIRoot extends Component {
               this.handleForceEntry();
             }
           }}
-          showEnterOnDevice={!this.state.waitingOnAudio && !this.props.entryDisallowed && !isMobileVR}
+          showEnterOnDevice={
+            false && !this.state.waitingOnAudio && !this.props.entryDisallowed && !isMobileVR
+          } /* desativado temporariamente */
           onEnterOnDevice={() => this.attemptLink()}
-          showSpectate={!this.state.waitingOnAudio}
+          showSpectate={false && !this.state.waitingOnAudio} /* desativado temporariamente */
           onSpectate={() => this.setState({ watching: true })}
-          showOptions={this.props.hubChannel.canOrWillIfCreator("update_hub")}
+          showOptions={false && this.props.hubChannel.canOrWillIfCreator("update_hub")} /* desativado temporariamente */
           onOptions={() => {
             this.props.performConditionalSignIn(
               () => this.props.hubChannel.can("update_hub"),
@@ -1110,10 +1112,40 @@ class UIRoot extends Component {
 
     const renderEntryFlow = (!enteredOrWatching && this.props.hub) || this.isWaitingForAutoExit();
 
+    const moreMenu = [
+      {
+        id: "user",
+        label: "Usuário",
+        items: [
+          {
+            id: "user-profile",
+            label: <FormattedMessage id="more-menu.profile" defaultMessage="Change Name & Avatar" />,
+            icon: AvatarIcon,
+            onClick: () => this.setSidebar("profile")
+          }
+        ]
+      },
+      {
+        id: "support",
+        label: <FormattedMessage id="more-menu.support" defaultMessage="Support" />,
+        items: [
+          entered && {
+            id: "start-tour",
+            label: <FormattedMessage id="more-menu.start-tour" defaultMessage="Start Tour" />,
+            icon: SupportIcon,
+            onClick: () => this.props.scene.systems.tips.resetTips()
+          }
+        ]
+      }
+    ];
+
+    /*
     const canCreateRoom = !configs.feature("disable_room_creation") || configs.isAdmin();
     const canCloseRoom = this.props.hubChannel && !!this.props.hubChannel.canOrWillIfCreator("close_hub");
     const isModerator = this.props.hubChannel && this.props.hubChannel.canOrWillIfCreator("kick_users") && !isMobileVR;
 
+
+    
     const moreMenu = [
       {
         id: "user",
@@ -1309,6 +1341,7 @@ class UIRoot extends Component {
         ].filter(item => item)
       }
     ];
+    */
 
     return (
       <MoreMenuContextProvider>
@@ -1655,7 +1688,7 @@ class UIRoot extends Component {
                         }}
                       />
                     )}
-                    {true && <MoreMenuPopoverButton menu={moreMenu} /> /* Desativado o More menu temporariamente*/}
+                    {<MoreMenuPopoverButton menu={moreMenu} />}
                   </>
                 }
               />
@@ -1674,6 +1707,8 @@ function UIRootHooksWrapper(props) {
 
   useEffect(() => {
     const el = document.getElementById("preload-overlay");
+    if (!el) return;
+
     el.classList.add("loaded");
 
     const sceneEl = props.scene;

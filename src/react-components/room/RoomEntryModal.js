@@ -67,7 +67,7 @@ export function RoomEntryModal({
               </span>
             </Button>
           )}
-          {false && showOptions && breakpoint !== "sm" /* Desativado as opção temporariamente */ && (
+          {showOptions && breakpoint !== "sm" && (
             <>
               <hr className={styleUtils.showLg} />
               <Button preset="transparent" className={styleUtils.showLg} onClick={onOptions}>

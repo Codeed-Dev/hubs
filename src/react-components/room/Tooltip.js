@@ -65,8 +65,7 @@ const onboardingMessages = defineMessages({
   "tips.end": {
     id: "tips.end",
     defaultMessage: "Tutorial encerrado! Bom evento!"
-  }
-  /*
+  },
   "tips.menu": {
     id: "tips.menu",
     defaultMessage: "Access the tour from the {menu} menu"
@@ -91,7 +90,6 @@ const onboardingMessages = defineMessages({
     id: "tips.text.invite",
     defaultMessage: "Convidar"
   }
-  */
 });
 
 function isStep(step, item) {

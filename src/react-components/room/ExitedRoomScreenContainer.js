@@ -4,9 +4,6 @@ import configs from "../../utils/configs";
 import { ExitedRoomScreen } from "./ExitedRoomScreen";
 
 export function ExitedRoomScreenContainer({ reason }) {
-  console.log("ExitedRoomScreenContainer");
-  console.log("reason", reason);
-  console.log("configs", configs);
   return (
     <ExitedRoomScreen
       showTerms={false} //configs.feature("show_terms")}
