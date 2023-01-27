@@ -1,5 +1,5 @@
 @use "../../react-components/styles/theme.scss";
-@import 'shared.scss';
+@import "shared.scss";
 
 :local(.presence-log) {
   align-self: flex-start;
@@ -173,7 +173,7 @@
 :local(.presence-log-in-room) {
   position: absolute;
   left: 20px;
-  bottom: 8px;
+  bottom: 100px;
 
   :local(.presence-log-entry) {
     background-color: theme.$overlay-bg-color;
