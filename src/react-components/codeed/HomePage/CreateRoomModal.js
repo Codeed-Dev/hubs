@@ -79,7 +79,7 @@ const CreateRoomModal = ({ onClose }) => {
                 key={scene.sceneId}
                 className={classNames(styles.sceneImg, { [styles.selectedScene]: scene.sceneId === sceneId })}
               >
-                <img src={scene.imgScr} alt={scene.name} onClick={() => setSceneId(scene.sceneId)} />
+                <img src={scene.imgScr} alt={scene.name} onClick={() => setSceneId(scene.sceneId)} loading="lazy" />
               </div>
             );
           })}
