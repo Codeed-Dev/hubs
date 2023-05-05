@@ -6,6 +6,7 @@ if (configs.CORS_PROXY_SERVER) {
   nonCorsProxyDomains.push(configs.CORS_PROXY_SERVER.split(":")[0]);
 }
 nonCorsProxyDomains.push(document.location.hostname);
+nonCorsProxyDomains.push("models.readyplayer.me");
 
 const commonKnownContentTypes = {
   gltf: "model/gltf",

@@ -664,6 +664,7 @@ export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
     gltfUrl = fileMap["scene.gtlf"];
   }
 
+  const isReadyPlayerMe = src.includes("models.readyplayer.me") && src.endsWith(".glb");
   const useRangeRequests = qsTruthy("rangerequests");
   const loadingManager = new THREE.LoadingManager();
   loadingManager.setURLModifier(getCustomGLTFParserURLResolver(gltfUrl));
@@ -753,6 +754,9 @@ export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
 
       gltf.scenes.forEach(scene => {
         scene.traverse(obj => {
+          //if (isReadyPlayerMe) {
+          // obj.scale.set(1, 1, 1);
+          //}
           if (obj.geometry) {
             disposables.add(obj.geometry);
           }
