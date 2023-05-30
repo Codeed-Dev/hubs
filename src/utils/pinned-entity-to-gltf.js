@@ -26,10 +26,12 @@ export default function pinnedEntityToGltf(el) {
     const mediaVersion = components["media-loader"].data.version;
     const mediaContentSubtype = components["media-loader"].data.contentSubtype;
 
+    /* Permite fazer o pin de videos
     if (mediaSrc.startsWith("hubs://") && mediaSrc.endsWith("/video")) {
       // Do not persist hubs client video urls
       return null;
     }
+    */
 
     gltfComponents.media = { src: mediaSrc, version: mediaVersion, contentSubtype: mediaContentSubtype, id: networkId };
 
