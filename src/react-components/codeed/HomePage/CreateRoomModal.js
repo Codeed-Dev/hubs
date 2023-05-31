@@ -33,9 +33,9 @@ const rooms = isHmc()
     ]
   : [
       {
-        name: "Sala de Reunião",
-        imgScr: "https://codeedmeta-assets.codeedmeta.com/files/fe25631b-304b-4c69-93dd-044c585ccc3a",
-        sceneId: "RYNHBLC"
+        name: "Sala CDL",
+        imgScr: "https://codeedmeta-assets.codeedmeta.com/files/d40a83d4-0bb4-482c-87ac-b3b17210ca1a",
+        sceneId: "CDTwD6z"
       },
       {
         name: "Sala de Jogos",
