@@ -25,8 +25,9 @@ export function SharePopoverButton({ items }) {
   const activeItem = filteredItems.find(item => item.active);
 
   // If there's one item to share (your smartphone camera), or an item is active (recording), then only show that button.
-  // codeed: removido o filtro de activeItem para permitir o share da screen e da camera
-  if (filteredItems.length === 1 /*|| activeItem */) {
+  // codeed: removido o filtro de activeItem para permitir o share da screen e da camera.
+  // voltado para não permitir duas por bug no share de multiplas
+  if (filteredItems.length === 1 || activeItem) {
     const item = filteredItems[0];
     const Icon = item.icon;
     return (

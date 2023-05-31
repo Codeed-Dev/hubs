@@ -81,10 +81,6 @@ function useShare(scene, hubChannel) {
   }, []);
 
   const toggleShareCamera = useCallback(() => {
-    // codeed: sempre cria uma nova camera
-    scene.emit("action_share_camera");
-    return;
-
     if (sharingSource) {
       scene.emit(MediaDevicesEvents.VIDEO_SHARE_ENDED);
     } else {
@@ -93,10 +89,6 @@ function useShare(scene, hubChannel) {
   }, [scene, sharingSource]);
 
   const toggleShareScreen = useCallback(() => {
-    // codeed: sempre cria uma nova camera
-    scene.emit("action_share_screen");
-    return;
-
     if (sharingSource) {
       scene.emit(MediaDevicesEvents.VIDEO_SHARE_ENDED);
     } else {
