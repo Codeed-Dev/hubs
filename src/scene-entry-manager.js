@@ -325,7 +325,8 @@ export default class SceneEntryManager {
 
     document.addEventListener("dragover", e => e.preventDefault());
 
-    let currentVideoShareEntity;
+    // Codeed: alteração para manter array de objetos compartilhados
+    let currentVideosShareEntities = []
     let isHandlingVideoShare = false;
 
     const shareSuccess = (isDisplayMedia, isVideoTrackAdded, target) => {
@@ -335,12 +336,14 @@ export default class SceneEntryManager {
         if (target === "avatar") {
           this.avatarRig.setAttribute("player-info", { isSharingAvatarCamera: true });
         } else {
-          currentVideoShareEntity = spawnMediaInfrontOfPlayer(this.mediaDevicesManager.mediaStream, undefined);
+          const currentVideoShareEntity = spawnMediaInfrontOfPlayer(this.mediaDevicesManager.mediaStream, undefined);
           // Wire up custom removal event which will stop the stream.
           currentVideoShareEntity.setAttribute(
             "emit-scene-event-on-remove",
             `event:${MediaDevicesEvents.VIDEO_SHARE_ENDED}`
           );
+
+          currentVideosShareEntities.push(currentVideoShareEntity);
         }
 
         this.scene.emit("share_video_enabled", { source: isDisplayMedia ? MediaDevices.SCREEN : MediaDevices.CAMERA });
@@ -380,13 +383,14 @@ export default class SceneEntryManager {
       if (isHandlingVideoShare) return;
       isHandlingVideoShare = true;
 
-      if (currentVideoShareEntity && currentVideoShareEntity.parentNode) {
+      (currentVideosShareEntities ?? []).map(currentVideoShareEntity => {
         NAF.utils.takeOwnership(currentVideoShareEntity);
         currentVideoShareEntity.parentNode.removeChild(currentVideoShareEntity);
-      }
+      });
+      
 
       await this.mediaDevicesManager.stopVideoShare();
-      currentVideoShareEntity = null;
+      currentVideosShareEntities = [];
 
       this.avatarRig.setAttribute("player-info", { isSharingAvatarCamera: false });
       this.scene.emit("share_video_disabled");

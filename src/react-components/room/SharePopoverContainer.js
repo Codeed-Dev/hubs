@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ReactComponent as VideoIcon } from "../icons/Video.svg";
 import { ReactComponent as DesktopIcon } from "../icons/Desktop.svg";
 import { ReactComponent as AvatarIcon } from "../icons/Avatar.svg";
+import { ReactComponent as CloseIcon } from "../icons/Close.svg";
 import { SharePopoverButton } from "./SharePopover";
 import { FormattedMessage } from "react-intl";
 import useAvatar from "./useAvatar";
@@ -74,7 +75,16 @@ function useShare(scene, hubChannel) {
     };
   }, [scene, hubChannel, hasVideoTextureTarget, mediaDevicesManager]);
 
+  // codeed: criado botão para cancelar o share (cancela todos os share: webcam e screen)
+  const endShareVideos = useCallback(() => {
+    scene.emit(MediaDevicesEvents.VIDEO_SHARE_ENDED);
+  }, []);
+
   const toggleShareCamera = useCallback(() => {
+    // codeed: sempre cria uma nova camera
+    scene.emit("action_share_camera");
+    return;
+
     if (sharingSource) {
       scene.emit(MediaDevicesEvents.VIDEO_SHARE_ENDED);
     } else {
@@ -83,6 +93,10 @@ function useShare(scene, hubChannel) {
   }, [scene, sharingSource]);
 
   const toggleShareScreen = useCallback(() => {
+    // codeed: sempre cria uma nova camera
+    scene.emit("action_share_screen");
+    return;
+
     if (sharingSource) {
       scene.emit(MediaDevicesEvents.VIDEO_SHARE_ENDED);
     } else {
@@ -105,7 +119,8 @@ function useShare(scene, hubChannel) {
     canShareScreen,
     toggleShareCamera,
     toggleShareCameraToAvatar,
-    toggleShareScreen
+    toggleShareScreen,
+    endShareVideos
   };
 }
 
@@ -117,7 +132,8 @@ export function SharePopoverContainer({ scene, hubChannel }) {
     canShareScreen,
     toggleShareScreen,
     canShareCameraToAvatar,
-    toggleShareCameraToAvatar
+    toggleShareCameraToAvatar,
+    endShareVideos
   } = useShare(scene, hubChannel);
 
   const items = [
@@ -144,6 +160,14 @@ export function SharePopoverContainer({ scene, hubChannel }) {
       label: <FormattedMessage id="share-popover.source.avatar-camera" defaultMessage="Avatar Camera" />,
       onSelect: toggleShareCameraToAvatar,
       active: sharingSource === "camera-to-avatar"
+    },
+    !!sharingSource && {
+      id: "end-share",
+      icon: CloseIcon,
+      color: "accent4",
+      label: <FormattedMessage id="share-popover.source.end-share" defaultMessage="End Share" />,
+      onSelect: endShareVideos,
+      active: true
     }
   ];
 

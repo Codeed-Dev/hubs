@@ -548,6 +548,7 @@
   "scene-url-modal.url-input": "URL da Cena",
   "select-input-field.placeholder": "Selecionar...",
   "share-popover.source.avatar-camera": "Avatar Webcam",
+  "share-popover.source.end-share": "Finalizar Compartilhamento",
   "share-popover.source.camera": "Webcam",
   "share-popover.source.screen": "Tela",
   "share-popover.title": "Compart.",
