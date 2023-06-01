@@ -346,12 +346,13 @@ export default class MediaDevicesManager extends EventEmitter {
 
     try {
       if (isDisplayMedia) {
+        console.log("getDisplayMedia");
         newStream = await navigator.mediaDevices.getDisplayMedia({
           video: {
             // Work around BMO 1449832 by calculating the width. This will break for multi monitors if you share anything
             // other than your current monitor that has a different aspect ratio.
-            width: 720 * (screen.width / screen.height),
-            height: 720,
+            width: 1920 * (screen.width / screen.height),
+            height: 1080,
             frameRate: 30
           },
           audio: {
@@ -361,9 +362,11 @@ export default class MediaDevicesManager extends EventEmitter {
           }
         });
       } else {
+        console.log("getUserMedia");
         newStream = await navigator.mediaDevices.getUserMedia({
           video: {
-            width: isIOS ? { max: 1280 } : { max: 1280, ideal: 720 },
+            width: isIOS ? { max: 1920  } : { max: 1920 , ideal: 1920  },
+            height: { ideal: 1080, max: 1080 },
             frameRate: 30
           }
           //TODO: Capture audio from camera?
